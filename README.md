@@ -2,7 +2,7 @@
 
 ## Description
 
-A weather dashboard that retrieves weather data for cities. It also stores past weather information.
+A weather dashboard that retrieves weather data for cities. It also shows weather for the next five days.
 
 ## Usage
 
