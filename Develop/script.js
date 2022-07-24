@@ -41,7 +41,7 @@ var uviC5El = document.querySelector("#uvi-c5")
 var searchBtn = document.querySelector("#searchBtn")
 var api = "b8b1072c7685f8cfc1089efb7de302ce"
 
-// function to 
+
 
 function displayWeather(event) {
     event.preventDefault()
@@ -64,6 +64,8 @@ function displayWeather(event) {
             })
             .then(function(fiveDayData){
                 console.log(fiveDayData)
+
+                // displays current weather 
                 var currentDate=moment.unix(currentData.dt).format("MM/DD/YYYY")
                 var iconImage=document.createElement("img")
                 iconImage.setAttribute("src",`http://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`)
@@ -74,6 +76,7 @@ function displayWeather(event) {
                 humidityEl.textContent=currentData.main.humidity+"%"
                 uviEl.textContent=fiveDayData.current.uvi
 
+                // displays weather for the next 5 day
                 var nextDate=moment.unix(fiveDayData.daily[1].dt).format("MM/DD/YYYY")
                 var iconImage1=document.createElement("img")
                 iconImage1.setAttribute("src",`http://openweathermap.org/img/wn/${fiveDayData.daily[1].weather[0].icon}@2x.png`)
@@ -132,5 +135,5 @@ function displayWeather(event) {
 }
 
 
-
+// eventlistener to display weather info when button is clicked
 cityFormEl.addEventListener("submit", displayWeather)
